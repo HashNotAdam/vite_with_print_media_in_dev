@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple reproduction of vite_ruby [issue #395](https://github.com/ElMassimo/vite_ruby/issues/395).
 
-Things you may want to cover:
+If you boot the app using only `rails server`, the root page will show "Screen content" (rendered by
+`app/views/application/index.html.erb`).
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If, however, you boot the dev server as well, `bin/vite dev`, the root page will show "Print
+content" because the print styles are added to the page without a media attribute, causing them to
+override the screen styles
